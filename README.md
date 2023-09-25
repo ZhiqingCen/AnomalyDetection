@@ -19,13 +19,19 @@ COMP9313 - Big Data Management, Project 1
 - For each sensor on each day, calculate the gap between the daily and the overall average.
 - Report all the readings such that the gap between the daily average and the overall average for that sensor on that day is larger than a given threshold $T$. 
 
-**Output Format**: The output should contain three fields: the station name, the date, and the gap, in the format of "<the station name>\t<the date>,<the gap>". The result should be sorted by the station name alphabetically first and then by the date in descending order. Given the sample input file and the threshold $T=20$, the result should be like:
+**Output Format**: The output should contain three fields: the station name, the date, and the gap, in the format of `<the station name>\t<the date>,<the gap>`. The result should be sorted by the station name alphabetically first and then by the date in descending order. Given the sample input file and the threshold $T=20$, the result should be like:
 
-TODO: image here
+~~~txt
+"Foster Weather Station"	"2015-06-09.27.82352941176471"
+"Foster Weather Station"	"2015-05-25,23.82352941176471"
+"Oak Street Weather Station"	"2015-06-12,20.07692307692308"
+"Oak Street Weather Station"	"2015-06-09.23.42307692307692"
+"Oak Street Weather Station"	"2015-05-25.22.92307692307692"
+~~~
 
 One more test case is provided as well, and the value of $T$ is set to 30.
 
-**Code Format**: The code template has been provided. Your code should take three parameters: the input file, the output folder on HDFS, and the threshold value τ. We will also use more than 1 reducer to test your code. Assuming τ=20 and using 2 reducers, you need to use the command below to run your code:
+**Code Format**: The code template has been provided. Your code should take three parameters: the input file, the output folder on HDFS, and the threshold value $T$. We will also use more than 1 reducer to test your code. Assuming $T=20$ and using 2 reducers, you need to use the command below to run your code:
 
 ~~~console
 $ python3 project1.py -r hadoop input -o hdfs_output --jobconf myjob.settings.tau=20 --jobconf mapreduce.job.reduces=2
