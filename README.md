@@ -1,4 +1,4 @@
-# AnomalyDetection
+# Anomaly Detection
 
 - Implemented Daily and Overall Humidity Calculations:
   - Developed a MapReduce program using MRJob to process a dataset of sensor readings, calculating daily average humidity for each sensor, followed by the overall average humidity across all days for each sensor.
